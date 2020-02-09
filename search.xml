@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Hexo博客搭建踩过的坑</title>
+      <link href="/2020/02/08/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/"/>
+      <url>/2020/02/08/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/</url>
+      
+        <content type="html"><![CDATA[<p>小编今天就总结一下以前搭建博客踩过的坑，希望对大家有所帮助！</p><p><a href="https://xwmrcj.github.io" class="LinkCard">Hexo博客搭建踩过的坑</a></p><p>hexo本地测试输入<span style="background: white">hexo s</span>，通常它的默认地址是<span style="background: white">localhost:4000</span>，默认的是本地4000端口。可能有些计算机会出现<u>无法访问此页面</u>，可能原因是当前端口被其他应用占用了。此时大家可以换一个端口：</p><a id="more"></a><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s -p 5000</span><br></pre></td></tr></table></figure></div><p>数字根据大家的喜好，如何又出现端口被占用情况，可以再换一个端口号试试。同时大家也可以释放掉当前被占用的端口，具体做法可参考<a href="https://jingyan.baidu.com/article/3c48dd34491d47e10be358b8.html" target="_blank" rel="noopener">此链接</a>，但小编不建议这么做，除非你清楚占用该端口的应用没有用。</p><hr><p>记得小编当初搭建博客时，在NexT主题版本上踩了一很久的坑，新版的很多配置都进行了修改。大家可以去<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>的GitHub上选取自己喜欢的版本，下载压缩包，解压到<u>站点</u>的<span style="background: white">themes</span>文件里面，然后打卡<u>站点</u>配置文件<span style="background: white">_config.yml</span>搜索<u>theme</u>，将其值改为当前解压的NexT版本的文件名。NexT主题的配置网上有很多教程，希望大家能搭建出自己心仪的博客！</p><p>(ง •_•)ง    (ง •_•)ง</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+          <category> NexT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> NexT </tag>
+            
+            <tag> 博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2020/02/05/hello-world/"/>
       <url>/2020/02/05/hello-world/</url>
@@ -19,66 +50,6 @@
             <tag> bash </tag>
             
             <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>bbb</title>
-      <link href="/2019/10/12/bbb/"/>
-      <url>/2019/10/12/bbb/</url>
-      
-        <content type="html"><![CDATA[<p>据库为了维护事务的几种性质，尤其是一致性和隔离性，一般使用加锁这种方式。同时数据库又是个高并发的应用，同一时间会有大量的并发访问，如果加锁过度，会极大的降低并发处理能力。所以对于加锁的处理，可以说就是数据库对于事务处理的精髓所在。</p><a id="more"></a>]]></content>
-      
-      
-      <categories>
-          
-          <category> NOSQL </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ES </tag>
-            
-            <tag> Solr </tag>
-            
-            <tag> MongoDB </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>aaa.md</title>
-      <link href="/2019/10/12/aaa/"/>
-      <url>/2019/10/12/aaa/</url>
-      
-        <content type="html"><![CDATA[<p><a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p><p><a href="http://localhost:4000/http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/http://localhost:4000/</a></p><p><a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p><p><a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p><a id="more"></a>]]></content>
-      
-      
-      <categories>
-          
-          <category> 数据库 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据库 </tag>
-            
-            <tag> MYSQL </tag>
-            
-            <tag> 事务 </tag>
-            
-            <tag> 锁 </tag>
             
         </tags>
       

@@ -495,33 +495,32 @@ body {
 .highlight-wrap[data-rel] {
   position: relative;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 8px;
 /*box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.4);*/
   box-shadow: 18px 18px 15px 0px rgba(0,0,0,0.4);
-  margin: 35px 0;
+  margin: 30px 0;
   margin-top: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .highlight-wrap[data-rel] ::-webkit-scrollbar {
   height: 10px;
 }
 .highlight-wrap[data-rel] ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  border-radius: 10px;
+  border-radius: 8px;
 }
 .highlight-wrap[data-rel] ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
+  border-radius: 8px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 .highlight-wrap[data-rel]::before {
   content: attr(data-rel);
   height: 38px;
-  line-height: 38px;
-  background: #21252b;
-/*background: #108414de;*/
+  line-height: 24px;
+  background: #4287f5;
   color: #fff;
-  font-size: 16px;
-/*position: absolute;*/
+  font-size: 15px;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -537,11 +536,11 @@ body {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   background: #fc625d;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   top: 0;
   left: 20px;
-  margin-top: 13px;
+  margin-top: 8px;
   -webkit-box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
   box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
   z-index: 3;
@@ -550,8 +549,8 @@ pre,
 .highlight {
   margin: 20px 0;
   font-size: 14px;
-  color: #ccc;
-  background: #2d2d2d;
+  color: #fff;
+  background: #002451;
   line-height: 1.6;
 }
 pre,
@@ -573,7 +572,7 @@ pre {
 }
 pre code {
   padding: 0;
-  color: #ccc;
+  color: #fff;
   background: none;
   text-shadow: none;
 }
@@ -596,7 +595,7 @@ pre code {
 }
 .highlight figcaption {
   font-size: 1em;
-  color: #ccc;
+  color: #fff;
   line-height: 1em;
   margin: 0em;
   padding: 0.5em;
@@ -613,22 +612,22 @@ pre code {
 }
 .highlight figcaption a {
   float: right;
-  color: #ccc;
+  color: #fff;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #ccc;
+  border-bottom-color: #fff;
 }
 .highlight .gutter pre {
   padding-left: 10px;
   padding-right: 10px;
-  color: #999;
+  color: #7285b7;
   text-align: right;
-  background-color: #1b1b1b;
+  background-color: #000e20;
 }
 .highlight .code pre {
   width: 100%;
   padding-left: 10px;
-  background-color: #2d2d2d;
+  background-color: #002451;
 }
 .highlight .line {
   height: 20px;
@@ -652,10 +651,10 @@ pre .addition {
   background: #008000;
 }
 pre .meta {
-  color: #c9c;
+  color: #ebbbff;
 }
 pre .comment {
-  color: #999;
+  color: #7285b7;
 }
 pre .variable,
 pre .attribute,
@@ -670,7 +669,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #f2777a;
+  color: #ff9da4;
 }
 pre .number,
 pre .preprocessor,
@@ -680,7 +679,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #f99157;
+  color: #ffc58f;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -693,11 +692,11 @@ pre .ruby .symbol,
 pre .xml .cdata,
 pre .special,
 pre .formula {
-  color: #9c9;
+  color: #d1f1a9;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #6cc;
+  color: #9ff;
 }
 pre .function,
 pre .python .decorator,
@@ -707,11 +706,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #69c;
+  color: #bbdaff;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #c9c;
+  color: #ebbbff;
 }
 .posts-expand .post-body img.full-image {
   border: none;
@@ -2016,7 +2015,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff5200;
+  background: #2ff;
 }
 .feed-link,
 .chat {
@@ -3610,12 +3609,16 @@ ul.popular-posts .popular-posts-item .popular-posts-title a:hover {
 }
 .highlight {
   position: relative;
+  outline: none;
+  border: none;
 }
 .btn-copy {
+  outline: none;
+  border: none;
   display: inline-block;
   cursor: pointer;
-  background-color: #eee;
-  background-image: linear-gradient(#fcfcfc, #eee);
+  background-color: #42f5e0;
+  background-image: linear-gradient(#fcfcfc, #42f5e0);
   border: 1px solid #d5d5d5;
   border-radius: 3px;
   -webkit-user-select: none;
