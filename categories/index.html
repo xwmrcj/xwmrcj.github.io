@@ -316,6 +316,22 @@
     <a href="/top/" rel="section"><i class="menu-item-icon fa fa-fw fa-signal"></i> <br>热榜</a>
 
   </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-links">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-link"></i> <br>友链</a>
+
+  </li>
 
       
       
@@ -353,6 +369,9 @@
             
 
     
+    
+      
+      
     
       
       
@@ -863,152 +882,76 @@ show_date_time();
 
 
   
-
-  
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
   
   <script>
-    (function () {
+    
+    function showTime(Counter) {
+      var entries = [];
+      var $visitors = $('.leancloud_visitors');
 
-      firebase.initializeApp({
-        apiKey: 'AIzaSyC7Exy6ZzLcLSjss0b5rseYbGEZHGKrzuo',
-        projectId: 'myh2020210'
-      })
+      $visitors.each(function() {
+        entries.push( $(this).attr('id').trim() );
+      });
 
-      function getCount(doc, url, increaseCount) {
-        //increaseCount will be false when not in article page
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+        .done(function({ results }) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
 
-        return doc.get().then(function (d) {
-          var count
-          if (!d.exists) { //has no data, initialize count
-            if (increaseCount) {
-              doc.set({
-                count: 1,
-                'url': url
-              })
-              count = 1
-            }
-            else {
-              count = 0
-            }
-          }
-          else { //has data
-            count = d.data().count
-            if (increaseCount) {
-              if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
-                doc.set({ //increase count
-                  count: count + 1,
-                  'url': url
-                })
-                count++
-              }
-            }
-          }
-          if (window.localStorage && increaseCount) { //mark as visited
-            localStorage.setItem(title, true)
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
           }
 
-          return count
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
         })
-      }
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
 
-      function appendCountTo(el) {
-        return function (count) {
-          $(el).append(
-            $('<span>').addClass('post-visitors-count').append(
-              $('<span>').addClass('post-meta-divider').text('|')
-            ).append(
-              $('<span>').addClass('post-meta-item-icon').append(
-               // $('<i>').addClass('fa fa-users')
-                $('<i>').addClass('fa fa-eye')
-              )
-              ).append($('<span>').text('post.visitors ' + count + ' 次'))
-          )
-        }
-      }
-
-      var db = firebase.firestore()
-      var articles = db.collection('articles')
-
-      //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'categories'.length > 0
-      var isArchive = '' === 'true'
-      var isCategory = ''.length > 0
-      var isTag = ''.length > 0
-
-      var urlPath = 'categories/index.html';
-      var urlFullPath = 'https://xwmrcj.github.io/categories/index.html';
-      var indexPath = 'index.html'; //首页链接
-      var isMenu = false;
-      
-         
-         var menuLink = '/';
-         if(urlPath.indexOf(menuLink) > 0 || urlPath == indexPath){
-            isMenu = true;
-         }
-      
-         
-         var menuLink = '/about/';
-         if(urlPath.indexOf(menuLink) > 0 || urlPath == indexPath){
-            isMenu = true;
-         }
-      
-         
-         var menuLink = '/tags/';
-         if(urlPath.indexOf(menuLink) > 0 || urlPath == indexPath){
-            isMenu = true;
-         }
-      
-         
-         var menuLink = '/categories/';
-         if(urlPath.indexOf(menuLink) > 0 || urlPath == indexPath){
-            isMenu = true;
-         }
-      
-         
-         var menuLink = '/archives/';
-         if(urlPath.indexOf(menuLink) > 0 || urlPath == indexPath){
-            isMenu = true;
-         }
-      
-         
-         var menuLink = '/top/';
-         if(urlPath.indexOf(menuLink) > 0 || urlPath == indexPath){
-            isMenu = true;
-         }
-      
-
-    //  if (isPost) { //is article page
-      if (!isMenu) { // 非菜单页、非主页（即在某篇文章链接里）
-        var title = 'categories'
-        var doc = articles.doc(title)
-
-      //  getCount(doc, true).then(appendCountTo($('.post-meta')))
-        getCount(doc, urlFullPath, true).then(appendCountTo($('.post-wordcount')))
-      }
-     // else if (!isArchive && !isCategory && !isTag) { //is index page
-      else if (urlPath == indexPath) { // 主页
-        var titles = [] //array to titles
-
-        var postsstr = '' //if you have a better way to get titles of posts, please change it
-        eval(postsstr)
-
-        var promises = titles.map(function (title) {
-          return articles.doc(title)
-        }).map(function (doc) {
-          return getCount(doc)
-        })
-        Promise.all(promises).then(function (counts) {
-          // var metas = $('.post-meta')
-          var metas = $('.post-wordcount')
-          counts.forEach(function (val, idx) {
-            appendCountTo(metas[idx])(val)
-          })
-        })
-      }
-    })()
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'VGcIM3uqJBFAR2NSDWKxwbfq-MdYXbMMI')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'VGcIM3uqJBFAR2NSDWKxwbfq-MdYXbMMI',
+                'X-LC-Key': 'QpTHI01XgvRsLs6bGb3QJ2mj',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            if ($('.post-title-link').length >= 1) {
+              showTime(Counter);
+            }
+          
+        });
+    });
   </script>
+
+
+
+  
 
   
 
@@ -1081,5 +1024,4 @@ show_date_time();
   <!-- 代码块复制功能 -->
   <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
   <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
-</html>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
