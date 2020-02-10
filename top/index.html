@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="相遇便是缘(❤ ω ❤)">
 <meta property="og:description" content="firebase.initializeApp({       apiKey: &apos;AIzaSyC7Exy6ZzLcLSjss0b5rseYbGEZHGKrzuo&apos;, //你的apiKey       projectId: &apos;myh2020210&apos;  //你的projectId    })     var title= &apos;&apos;;    var count = 0;    va">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-10T04:05:31.927Z">
+<meta property="og:updated_time" content="2020-02-10T07:19:43.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文章热榜排行">
 <meta name="twitter:description" content="firebase.initializeApp({       apiKey: &apos;AIzaSyC7Exy6ZzLcLSjss0b5rseYbGEZHGKrzuo&apos;, //你的apiKey       projectId: &apos;myh2020210&apos;  //你的projectId    })     var title= &apos;&apos;;    var count = 0;    va">
@@ -432,7 +432,7 @@
    var collection =  'articles'; //主题配置文件配置的collection //';
    db.collection(collection).orderBy('count', 'desc').limit(10).get().then((querySnapshot) => {
        querySnapshot.forEach((doc) => {
-       //  console.log(doc.id, " => ", doc.data());
+         // console.log(doc.id, " => ", doc.data());
            title = doc.id;
            count = doc.data().count;
            url = doc.data().url;
@@ -910,7 +910,8 @@ show_date_time();
             if (increaseCount) {
               if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
                 doc.set({ //increase count
-                  count: count + 1
+                  count: count + 1,
+                  'url': url
                 })
                 count++
               }
