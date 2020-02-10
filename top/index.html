@@ -105,18 +105,18 @@
 
 
 
-  <meta name="description" content="AV.initialize(&quot;VGcIM3uqJBFAR2NSDWKxwbfq-MdYXbMMI&quot;, &quot;QpTHI01XgvRsLs6bGb3QJ2mj&quot;);AV.useAVCloudUS();    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(">
+  <meta name="description" content="AV.initialize(&quot;jeJto0JtdkVBj1tTPcjEFa8a-gzGzoHsz&quot;, &quot;QtexeRVXTBxcvFiUnJcCsVLl&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(&apos;id&apos;,0);   qu">
 <meta name="keywords" content="MYH的博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="文章热榜排行">
 <meta property="og:url" content="https://xwmrcj.github.io/top/index.html">
 <meta property="og:site_name" content="相遇便是缘(❤ ω ❤)">
-<meta property="og:description" content="AV.initialize(&quot;VGcIM3uqJBFAR2NSDWKxwbfq-MdYXbMMI&quot;, &quot;QpTHI01XgvRsLs6bGb3QJ2mj&quot;);AV.useAVCloudUS();    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(">
+<meta property="og:description" content="AV.initialize(&quot;jeJto0JtdkVBj1tTPcjEFa8a-gzGzoHsz&quot;, &quot;QtexeRVXTBxcvFiUnJcCsVLl&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(&apos;id&apos;,0);   qu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-10T10:41:41.903Z">
+<meta property="og:updated_time" content="2020-02-10T11:45:02.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文章热榜排行">
-<meta name="twitter:description" content="AV.initialize(&quot;VGcIM3uqJBFAR2NSDWKxwbfq-MdYXbMMI&quot;, &quot;QpTHI01XgvRsLs6bGb3QJ2mj&quot;);AV.useAVCloudUS();    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(">
+<meta name="twitter:description" content="AV.initialize(&quot;jeJto0JtdkVBj1tTPcjEFa8a-gzGzoHsz&quot;, &quot;QtexeRVXTBxcvFiUnJcCsVLl&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(&apos;id&apos;,0);   qu">
 
 
 
@@ -427,9 +427,14 @@
       <div class="post-body">
         
         
-          <div id="top"></div>
-<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script>AV.initialize("VGcIM3uqJBFAR2NSDWKxwbfq-MdYXbMMI", "QpTHI01XgvRsLs6bGb3QJ2mj");AV.useAVCloudUS();</script>
+          <br>
+
+<div id="top" style="margin-top:30px;">
+
+</div>
+
+<script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script>AV.initialize("jeJto0JtdkVBj1tTPcjEFa8a-gzGzoHsz", "QtexeRVXTBxcvFiUnJcCsVLl");</script>
 <script type="text/javascript">
   var time=0
   var title=""
@@ -444,7 +449,9 @@
       time=result.time;
       title=result.title;
       url=result.url;
-      var content="<p>"+"<font color='#1C1C1C'>"+"【文章热度:"+time+"℃】"+"</font>"+"<a href='"+"https://xwmrcj.com"+url+"'>"+title+"</a>"+"</p>";
+      // var content="<a href='"+"https://www.xwmrcj.com"+url+"'>"+title+"</a>"+"<br>"+"<font color='#fff'>"+"阅读次数："+time+"</font>"+"<br><br>";
+      // var content="<p>"+"<font color='#1C1C1C'>"+" 热度:"+time+"℃】"+"</font>"+"<a href='"+"https://www.xwmrcj.com"+url+"'>"+title+"</a>"+"</p>";
+         var content="<p class='my-article-top'>"+"<font color=#a7a7e5>"+"&#x27a4;【热度: "+"</font>"+"<font color=#f1a8ce>"+time+"℃】"+"</font>"+"<a href='"+"https://xwmrcj.com"+url+"'>"+title+"</a>"+"</p>";
       document.getElementById("top").innerHTML+=content
     }
   }, function (error) {
@@ -928,15 +935,15 @@ show_date_time();
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'VGcIM3uqJBFAR2NSDWKxwbfq-MdYXbMMI')
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'jeJto0JtdkVBj1tTPcjEFa8a-gzGzoHsz')
         .done(function({ api_server }) {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
               url: 'https://' + api_server + '/1.1' + url,
               headers: {
-                'X-LC-Id': 'VGcIM3uqJBFAR2NSDWKxwbfq-MdYXbMMI',
-                'X-LC-Key': 'QpTHI01XgvRsLs6bGb3QJ2mj',
+                'X-LC-Id': 'jeJto0JtdkVBj1tTPcjEFa8a-gzGzoHsz',
+                'X-LC-Key': 'QtexeRVXTBxcvFiUnJcCsVLl',
                 'Content-Type': 'application/json',
               },
               data: data
@@ -1026,4 +1033,5 @@ show_date_time();
   <!-- 代码块复制功能 -->
   <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
   <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
