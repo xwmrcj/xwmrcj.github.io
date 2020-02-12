@@ -2015,7 +2015,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6a71ff;
+  background: #8e9871;
 }
 .feed-link,
 .chat {
@@ -3653,23 +3653,6 @@ ul.popular-posts .popular-posts-item .popular-posts-title a:hover {
 }
 .highlight:hover .btn-copy {
   opacity: 1;
-}
-.my-article-top:hover {
-  background-image: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
-  transform: scale(1.1);
-  box-shadow: 10px 10px 15px 2px rgba(0,0,0,0.12), 0 0 6px 0 rgba(104,104,105,0.1);
-  border-radius: 30px;
-  width: 400px;
-  padding: 1px 10px;
-  margin-left: 25px;
-  font-size: 16px;
-  transition-duration: 0.15s;
-}
-@media (max-width: 767px) {
-  .my-article-top:hover {
-    width: 260px;
-    margin-left: 18px;
-  }
 }
 .menu-item:hover {
   background: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
