@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <title>photo</title>
+    <style>
+        html {
+          height: 100%;
+        }
+
+        body {
+          background: #000;
+          overflow: hidden;
+        }
+        canvas {
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+        #c1 {
+          opacity: 0;
+        }
+
+        #c2 {
+          background: #000;
+        }
+
+
+        .images {
+          cursor: pointer;
+        }
+        .images:hover .image:nth-child(7) {
+          -moz-transform: rotate(12deg) translateX(75px);
+          -ms-transform: rotate(12deg) translateX(75px);
+          -webkit-transform: rotate(12deg) translateX(75px);
+          transform: rotate(12deg) translateX(75px);
+        }
+        .images:hover .image:nth-child(6) {
+          -moz-transform: rotate(-6deg) translateX(-50px);
+          -ms-transform: rotate(-6deg) translateX(-50px);
+          -webkit-transform: rotate(-6deg) translateX(-50px);
+          transform: rotate(-6deg) translateX(-50px);
+        }
+        .images:hover .image:nth-child(5) {
+          -moz-transform: rotate(6deg) translateX(50px);
+          -ms-transform: rotate(6deg) translateX(50px);
+          -webkit-transform: rotate(6deg) translateX(50px);
+          transform: rotate(6deg) translateX(50px);
+        }
+        .images:hover .image:nth-child(4) {
+          -moz-transform: rotate(10deg) translateX(50px);
+          -ms-transform: rotate(10deg) translateX(50px);
+          -webkit-transform: rotate(10deg) translateX(50px);
+          transform: rotate(10deg) translateX(50px);
+        }
+        .images:hover .image:nth-child(3) {
+          -moz-transform: rotate(3deg) translateX(75px);
+          -ms-transform: rotate(3deg) translateX(75px);
+          -webkit-transform: rotate(3deg) translateX(75px);
+          transform: rotate(3deg) translateX(75px);
+        }
+        .images:hover .image:nth-child(2) {
+          -moz-transform: rotate(-2deg) translateX(-50px);
+          -ms-transform: rotate(-2deg) translateX(-50px);
+          -webkit-transform: rotate(-2deg) translateX(-50px);
+          transform: rotate(-2deg) translateX(-50px);
+        }
+        .images:hover .image:first-child {
+          -moz-transform: rotate(-8deg) translateX(-75px) translateY(-10px);
+          -ms-transform: rotate(-8deg) translateX(-75px) translateY(-10px);
+          -webkit-transform: rotate(-8deg) translateX(-75px) translateY(-10px);
+          transform: rotate(-8deg) translateX(-75px) translateY(-10px);
+        }
+
+        .image {
+          position: absolute;
+          top: 50%;
+          left: 35%;
+          height: 360px;
+          width: 640px;
+          margin-top: -110px;
+          margin-left: -105px;
+          border: 5px solid #fff;
+          border-bottom-width: 15px;
+          -moz-box-shadow: 0 2px 5px rgba(30, 30, 30, 0.25);
+          -webkit-box-shadow: 0 2px 5px rgba(30, 30, 30, 0.25);
+          box-shadow: 0 2px 5px rgba(30, 30, 30, 0.25);
+          z-index: 2;
+          -moz-transition: -moz-transform 0.3s ease-in-out;
+          -o-transition: -o-transform 0.3s ease-in-out;
+          -webkit-transition: -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out;
+        }
+        .image:first-child {
+          -moz-transform: rotate(10deg);
+          -ms-transform: rotate(10deg);
+          -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+        }
+        .image:nth-child(2) {
+          -moz-transform: rotate(2deg);
+          -ms-transform: rotate(2deg);
+          -webkit-transform: rotate(2deg);
+          transform: rotate(2deg);
+        }
+        .image:nth-child(3) {
+          -moz-transform: rotate(-3deg);
+          -ms-transform: rotate(-3deg);
+          -webkit-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+        }
+        .image:nth-child(4) {
+          -moz-transform: rotate(-10deg);
+          -ms-transform: rotate(-10deg);
+          -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+        }
+        .image:nth-child(5) {
+          -moz-transform: rotate(-15deg);
+          -ms-transform: rotate(-15deg);
+          -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+        }
+        .image:nth-child(6) {
+          -moz-transform: rotate(15deg);
+          -ms-transform: rotate(15deg);
+          -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+        }
+        .image:nth-child(7) {
+          -moz-transform: rotate(10deg);
+          -ms-transform: rotate(10deg);
+          -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+        }
+        .image:last-child {
+          -moz-transform: rotate(-5deg);
+          -ms-transform: rotate(-5deg);
+          -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+        }
+        .image.slide-right {
+          -moz-transform: rotate(290deg) translateX(600px);
+          -ms-transform: rotate(290deg) translateX(600px);
+          -webkit-transform: rotate(290deg) translateX(600px);
+          transform: rotate(290deg) translateX(600px);
+        }
+        .image.slide-left {
+          -moz-transform: rotate(-290deg) translateX(-600px);
+          -ms-transform: rotate(-290deg) translateX(-600px);
+          -webkit-transform: rotate(-290deg) translateX(-600px);
+          transform: rotate(-290deg) translateX(-600px);
+        }
+        .image.back {
+          z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="c1"></canvas>
+    <canvas id="c2"></canvas>
+
+    <div class="images">
+      <img class="image" src="https://s2.ax1x.com/2020/03/03/34kg00.png">
+      <img class="image" src="https://s2.ax1x.com/2020/03/03/34kcmq.png">
+      <img class="image" src="https://s2.ax1x.com/2020/03/03/34i3ND.png">
+      <img class="image" src="https://s2.ax1x.com/2020/03/03/34iMB6.png">
+      <img class="image" src="https://s2.ax1x.com/2020/03/03/34inj1.jpg">
+
+      <img class="image" src="https://s2.ax1x.com/2020/03/03/34ie39.jpg">
+      <img class="image" src="https://s2.ax1x.com/2020/03/03/34iEh4.jpg">
+      <img class="image" src="https://s2.ax1x.com/2020/03/03/34ikAU.jpg">
+
+    </div>
+    <script>
+        (function () {
+          var cssTransition, imageOffset, imageWidth, images, queue, timeout, touch;
+
+          cssTransition = function () {
+            var body, i, len, style, vendor, vendors;
+            body = document.body || document.documentElement;
+            style = body.style;
+            vendors = ['Moz', 'Webkit', 'O'];
+            if (typeof style['transition'] === 'string') {
+              return true;
+            }
+            for (i = 0, len = vendors.length; i < len; i++) {if (window.CP.shouldStopExecution(0)) break;
+              vendor = vendors[i];
+              if (typeof style[vendor + 'Transition'] === 'string') {
+                return true;
+              }
+            }window.CP.exitedLoop(0);
+            return false;
+          };
+
+          queue = false;
+
+          touch = document.documentElement['ontouchstart'] !== void 0;
+
+          images = document.querySelector('.images');
+
+          imageWidth = images.firstElementChild.offsetWidth;
+
+          imageOffset = images.firstElementChild.offsetLeft;
+
+          timeout = cssTransition() ? [300, 400] : [0, 0];
+
+          images.addEventListener(touch ? 'touchend' : 'click', function (event) {
+            var direction, lastClassList;
+            if (queue) {
+              return;
+            }
+            queue = true;
+            if ((touch ? event.changedTouches[0].pageX : event.pageX) - imageOffset > imageWidth / 2) {
+              direction = 'slide-right';
+            } else {
+              direction = 'slide-left';
+            }
+            lastClassList = images.lastElementChild.classList;
+            lastClassList.add(direction);
+            return setTimeout(function () {
+              lastClassList.remove(direction);
+              lastClassList.add('back');
+              return setTimeout(function () {
+                images.insertBefore(images.lastElementChild, images.firstElementChild);
+                lastClassList.remove('back');
+                return queue = false;
+              }, timeout[0]);
+            }, timeout[1]);
+          }, false);
+
+        }).call(this);
+
+        //# sourceURL=coffeescript
+
+        //背景
+        var c1 = document.getElementById( 'c1' ),
+            ctx1 = c1.getContext( '2d' ),
+            c2 = document.getElementById( 'c2' ),
+            ctx2 = c2.getContext( '2d' ),
+            twopi = Math.PI * 2,
+            parts = [],
+            sizeBase,
+            cw,
+            opt,
+            hue,
+            count;
+
+        function rand( min, max ) {
+            return Math.random() * ( max - min ) + min;
+        }
+
+        function hsla( h, s, l, a ) {
+            return 'hsla(' + h + ',' + s + '%,' + l + '%,' + a + ')';
+        }
+
+        function create() {
+            sizeBase = cw + ch;
+            count = Math.floor( sizeBase * 0.3 ),
+            hue = rand( 0, 360 ),
+            opt = {
+                radiusMin: 1,
+                radiusMax: sizeBase * 0.04,
+                blurMin: 10,
+                blurMax: sizeBase * 0.04,
+                hueMin: hue,
+                hueMax: hue + 100,
+                saturationMin: 10,
+                saturationMax: 70,
+                lightnessMin: 20,
+                lightnessMax: 50,
+                alphaMin: 0.1,
+                alphaMax: 0.5
+            }
+            ctx1.clearRect( 0, 0, cw, ch );
+            ctx1.globalCompositeOperation = 'lighter';
+            while( count-- ) {
+                var radius = rand( opt.radiusMin, opt.radiusMax ),
+                    blur = rand( opt.blurMin, opt.blurMax ),
+                    x = rand( 0, cw ),
+                    y = rand( 0, ch ),
+                    hue = rand(opt.hueMin, opt.hueMax ),
+                    saturation = rand( opt.saturationMin, opt.saturationMax ),
+                    lightness = rand(  opt.lightnessMin, opt.lightnessMax ),
+                    alpha = rand( opt.alphaMin, opt.alphaMax );
+
+                ctx1.shadowColor = hsla( hue, saturation, lightness, alpha );
+                ctx1.shadowBlur = blur;
+                ctx1.beginPath();
+                ctx1.arc( x, y, radius, 0, twopi );
+                ctx1.closePath();
+                ctx1.fill();
+            }
+
+            parts.length = 0;
+            for( var i = 0; i < Math.floor( ( cw + ch ) * 0.03 ); i++ ) {
+                parts.push({
+                    radius: rand( 1, sizeBase * 0.03 ),
+                    x: rand( 0, cw ),
+                    y: rand( 0, ch ),
+                    angle: rand( 0, twopi ),
+                    vel: rand( 0.1, 0.5 ),
+                    tick: rand( 0, 10000 )
+                });
+            }
+        }
+
+        function init() {
+            resize();
+            create();
+            loop();
+        }
+
+        function loop() {
+            requestAnimationFrame( loop );
+
+            ctx2.clearRect( 0, 0, cw, ch );
+            ctx2.globalCompositeOperation = 'source-over';
+            ctx2.shadowBlur = 0;
+            ctx2.drawImage( c1, 0, 0 );
+            ctx2.globalCompositeOperation = 'lighter';
+
+            var i = parts.length;
+            ctx2.shadowBlur = 15;
+            ctx2.shadowColor = '#fff';
+            while( i-- ) {
+                var part = parts[ i ];
+
+                part.x += Math.cos( part.angle ) * part.vel;
+                part.y += Math.sin( part.angle ) * part.vel;
+                part.angle += rand( -0.05, 0.05 );
+
+                ctx2.beginPath();
+                ctx2.arc( part.x, part.y, part.radius, 0, twopi );
+                ctx2.fillStyle = hsla( 0, 0, 100, 0.075 + Math.cos( part.tick * 0.02 ) * 0.05 );
+                ctx2.fill();
+
+                if( part.x - part.radius > cw ) { part.x = -part.radius }
+                if( part.x + part.radius < 0 )  { part.x = cw + part.radius }
+                if( part.y - part.radius > ch ) { part.y = -part.radius }
+                if( part.y + part.radius < 0 )  { part.y = ch + part.radius }
+
+                part.tick++;
+            }
+        }
+
+        function resize() {
+            cw = c1.width = c2.width = window.innerWidth,
+            ch = c1.height = c2.height = window.innerHeight;
+            create();
+        }
+
+        function click() {
+            create()
+        }
+
+        window.addEventListener( 'resize', resize );
+        window.addEventListener( 'click', click );
+
+        init();
+    </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
