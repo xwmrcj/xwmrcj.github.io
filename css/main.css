@@ -2015,7 +2015,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff42ff;
+  background: #54ffed;
 }
 .feed-link,
 .chat {
@@ -3309,11 +3309,6 @@ ul.breadcrumb li+li:last-child {
   font-size: 20px;
 }
 body {
-  background: url("https://s2.ax1x.com/2020/02/11/1ocCY8.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
-  background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   -moz-background-size: cover;
@@ -3323,12 +3318,12 @@ body #footer > div > div {
   color: #000;
 }
 .header-inner {
-  background: rgba(255,255,255,0.91);
-  opacity: 0.8;
+  background: #c8e3f8;
+  opacity: 1;
 }
 .main-inner {
   background: #fff;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 * {
   cursor: url("https://www.easyicon.net/api/resizeApi.php?id=1228799&size=24"), auto;
@@ -3743,6 +3738,16 @@ ul.popular-posts .popular-posts-item .popular-posts-title a:hover {
 }
 .btn--radius {
   border-radius: 36px;
+}
+canvas {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  width: auto;
+  z-index: -1;
 }
 @-moz-keyframes sliding {
   to {
