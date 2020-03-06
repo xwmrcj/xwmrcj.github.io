@@ -2015,7 +2015,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffbeff;
+  background: #75ff2b;
 }
 .feed-link,
 .chat {
@@ -3253,11 +3253,12 @@ ul.breadcrumb li+li:last-child {
   }
 }
 .post {
+  border-radius: 25px;
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 25px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+  -webkit-box-shadow: 0 0 5px rgba(80,166,236,0.5);
+  -moz-box-shadow: 0 0 5px rgba(80,166,236,0.5);
 }
 .back-to-top {
   right: 60px;
@@ -3748,6 +3749,46 @@ canvas {
   height: auto;
   width: auto;
   z-index: -1;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+::-webkit-scrollbar-button:start:increment,
+::-webkit-scrollbar-button:end:decrement {
+  display: none;
+}
+::-webkit-scrollbar-corner {
+  display: block;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(0,0,0,0.15);
+}
+::-webkit-scrollbar-button:start {
+  width: 10px;
+  height: 10px;
+/*background: url(../images/scrollbar_arrow.png) no-repeat 0 0;*/
+/*可以添加滚动条样式*/
+}
+.sidebar-img {
+  background-image: url("/images/saber.png");
 }
 @-moz-keyframes sliding {
   to {
