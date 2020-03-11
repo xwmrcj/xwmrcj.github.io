@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Hadoop启动时出现Permission denied</title>
+      <link href="/posts/94ef7154.html"/>
+      <url>/posts/94ef7154.html</url>
+      
+        <content type="html"><![CDATA[<img src="https://s1.ax1x.com/2020/03/11/8E73CD.jpg"><a id="more"></a><p><a href="https://xwmrcj.com/posts/94ef7154.html" class="LinkCard">Hadoop启动时出现Permission denied</a></p><p>Hello everyone！今天摸鱼怪就总结一下在Ubuntu搭建Hadoop踩过的坑，如果大家想了解搭建Hadoop的详细过程，可以参考一下这个摸鱼怪的<a href="https://www.xiangjunhong.com/posts/ae1da46b.html" target="_blank" rel="noopener">文章</a>😁！</p><hr><h6 id="启动hadoop时出现如下错误"><a href="#启动hadoop时出现如下错误" class="headerlink" title="启动hadoop时出现如下错误"></a>启动hadoop时出现如下错误</h6><img src="https://s1.ax1x.com/2020/03/11/8Eb7H1.png"><p><span style="background: #D3E0EA">permission denied (publickey,password)</span>意思是权限被拒绝(公钥，密码)，说明<u>配置ssh免密登陆没有成功</u>，此时，如果运行：</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh localhost</span><br></pre></td></tr></table></figure></div><p>会提示输入密码。</p><h6 id="重新配置ssh免密登陆"><a href="#重新配置ssh免密登陆" class="headerlink" title="重新配置ssh免密登陆"></a>重新配置ssh免密登陆</h6><p>输入以下命令：</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa</span><br><span class="line">cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure></div><p>然后再次运行：</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh localhost</span><br></pre></td></tr></table></figure></div><div class="note success">            <p>如果本次没有输入密码就登陆成功了，就说明配置ssh免密登陆成功</p>          </div><h6 id="重新格式化NameNode"><a href="#重新格式化NameNode" class="headerlink" title="重新格式化NameNode"></a>重新格式化NameNode</h6><div class="note info">            <p>在本次格式化前，需要删除上次格式化产生的数据</p>          </div><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/hadoop/tmp/dfs/name</span><br><span class="line">sudo rm -rf current</span><br></pre></td></tr></table></figure></div><div class="note info">            <p>cd后的路径是你自己配的路径</p>          </div><img src="https://s2.ax1x.com/2020/03/11/8ERuHe.png"><p>然后输入：</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure></div><p>检查是否删除成功，如果输入<span style="background: #D3E0EA"> ls </span>后什么都没显示，则说明删除成功！</p><p>重新格式化NameNode：</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./bin/hdfs namenode -format</span><br></pre></td></tr></table></figure></div><div class="note info">            <p>如果日志里出现了“successfully formatted”,则说明格式化成功</p>          </div><h6 id="重新启动hadoop"><a href="#重新启动hadoop" class="headerlink" title="重新启动hadoop"></a>重新启动hadoop</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/hadoop</span><br><span class="line">./sbin/start-dfs.sh</span><br></pre></td></tr></table></figure></div><p>此时就不会出现permission denied错误提示了。</p><img src="https://s2.ax1x.com/2020/03/11/8Ef16P.png"><p>启动完成后，可通过命令：</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jps</span><br></pre></td></tr></table></figure></div><p>判断是否成功启动，如过成功启动会列出如下进程：</p><img src="https://s2.ax1x.com/2020/03/11/8EhI8s.png"><p>之后，你就可以打开Firefox，访问<span style="background: #D3E0EA"> localhost:9870 </span></p><img src="https://s2.ax1x.com/2020/03/11/8EIr8J.png"><div class="note success">            <h6 id="至此，Hadoop伪分布式就配置成功了"><a href="#至此，Hadoop伪分布式就配置成功了" class="headerlink" title="至此，Hadoop伪分布式就配置成功了"></a>至此，Hadoop伪分布式就配置成功了</h6><p>希望摸鱼怪总结的对大家有些作用吧！同时也希望各位大佬能指出我的不足，在下一定加以改正</p>          </div><center style="color: #08A3F9; font-size: 24px">摸鱼永无止境，大家(ง •_•)ง！！</center>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hadoop </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hadoop </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VS2017操做sql server数据库</title>
       <link href="/posts/6bdf8b67.html"/>
       <url>/posts/6bdf8b67.html</url>
