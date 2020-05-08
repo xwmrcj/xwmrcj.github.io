@@ -106,17 +106,17 @@
 
 
 
-  <meta name="keywords" content="VS2017,sql server,数据库">
-<meta property="og:type" content="article">
-<meta property="og:title" content="VS2017操做sql server数据库">
-<meta property="og:url" content="https://xwmrcj.com/posts/6bdf8b67.html">
+  <meta name="description" content="宝剑锋从磨砺出，梅花香自苦寒来">
+<meta name="keywords" content="MYH的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="相遇便是缘(❤ ω ❤)">
+<meta property="og:url" content="https://xwmrcj.com/page/3/index.html">
 <meta property="og:site_name" content="相遇便是缘(❤ ω ❤)">
+<meta property="og:description" content="宝剑锋从磨砺出，梅花香自苦寒来">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://s2.ax1x.com/2020/03/08/3xkeun.png">
-<meta property="og:updated_time" content="2020-05-08T14:42:50.313Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VS2017操做sql server数据库">
-<meta name="twitter:image" content="https://s2.ax1x.com/2020/03/08/3xkeun.png">
+<meta name="twitter:title" content="相遇便是缘(❤ ω ❤)">
+<meta name="twitter:description" content="宝剑锋从磨砺出，梅花香自苦寒来">
 
 
 
@@ -124,7 +124,7 @@
 
   
   
-  <link rel="canonical" href="https://xwmrcj.com/posts/6bdf8b67">
+  <link rel="canonical" href="https://xwmrcj.com/page/3/">
 
 
 
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>VS2017操做sql server数据库 | 相遇便是缘(❤ ω ❤)</title>
+  <title>相遇便是缘(❤ ω ❤)</title>
   
 
 
@@ -182,7 +182,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -384,9 +385,403 @@
           
           <div id="content" class="content">
             
+  <!--轮播图-->
+  
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <div id="posts" class="posts-expand">
+<style type="text/css">
+
+.glyphicon-chevron-left:before{
+	/* content: "《" */
+}
+.glyphicon-chevron-right:before{
+	/* content: "》" */
+}
+
+.right-siders{
+   border-radius: 10px;
+   /*margin-top: 5px;*/
+   margin-bottom: 5px;
+}
+
+.my-carousel:hover{
+  margin-left: 5px;
+  //padding: 5px 1px;
+  border-radius: 5px;
+  transform: scale(1.1);
+  box-shadow: 10px 10px 15px 2px rgba(0,0,0,.12), 0 0 6px 0 rgba(104, 104, 105, 0.1);
+}
+
+@media (max-width: 767px){
+   .rights{
+      display: none;
+   }
+   .carousel{
+      width: 100% !important;
+      height: 100% !important;
+   }
+   .slide{
+      width: 100% !important;
+      height: 100% !important;
+   }
+	
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 30px;
+  }
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .icon-prev {
+    margin-left: -10px;
+  }
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-next {
+   /* margin-right: -10px; */
+  }
+
+}
+
+.carousel{
+	width: 65%;
+	height: 100%;
+	position: relative;
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.carousel-inner > .item {
+  display: none;
+  position: relative;
+  -webkit-transition: 0.6s ease-in-out left;
+  -o-transition: 0.6s ease-in-out left;
+  transition: 0.6s ease-in-out left;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  line-height: 1;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel-inner > .item {
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    -moz-transition: -moz-transform 0.6s ease-in-out;
+    -o-transition: -o-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+  }
+  .carousel-inner > .item.next,
+  .carousel-inner > .item.active.right {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    left: 0;
+  }
+  .carousel-inner > .item.prev,
+  .carousel-inner > .item.active.left {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    left: 0;
+  }
+  .carousel-inner > .item.next.left,
+  .carousel-inner > .item.prev.right,
+  .carousel-inner > .item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    left: 0;
+  }
+}
+.carousel-inner > .active,
+.carousel-inner > .next,
+.carousel-inner > .prev {
+  display: block;
+}
+.carousel-inner > .active {
+  left: 0;
+}
+.carousel-inner > .next,
+.carousel-inner > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.carousel-inner > .next {
+  left: 100%;
+}
+.carousel-inner > .prev {
+  left: -100%;
+}
+.carousel-inner > .next.left,
+.carousel-inner > .prev.right {
+  left: 0;
+}
+.carousel-inner > .active.left {
+  left: -100%;
+}
+.carousel-inner > .active.right {
+  left: 100%;
+}
+.carousel-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  /*width: 5%;*/
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
+}
+.carousel-control.left {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000, endColorstr=#00000000, GradientType=1);
+}
+.carousel-control.right {
+  left: auto;
+  right: 0;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#80000000, GradientType=1);
+}
+.carousel-control:hover,
+.carousel-control:focus {
+  outline: 0;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.carousel-control .icon-prev,
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  z-index: 5;
+  display: inline-block;
+}
+/*
+.carousel-control .icon-prev,
+.carousel-control .glyphicon-chevron-left {
+  left: 50%;
+  margin-left: -10px;
+}
+*/
+
+.carousel-control .icon-prev,
+.carousel-control .glyphicon-chevron-left {
+  background: url('/images/icon-slides.png');
+  background-position-y: -20px;
+  left: 9px;
+}
+
+/*
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-right {
+  right: 50%;
+  margin-right: -10px;
+}
+*/
+
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-right {
+  background: url('/images/icon-slides.png');
+  background-position-x: -50px;
+  background-position-y: -20px;
+  right: 0px;
+}
+
+.carousel-control .icon-prev,
+.carousel-control .icon-next {
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  font-family: serif;
+}
+
+.carousel-control .icon-prev:before {
+  content: 2039;
+}
+.carousel-control .icon-next:before {
+  content: 203a;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  margin-left: -30%;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+.carousel-indicators li {
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  margin: 5px;
+  text-indent: -999px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, .24);
+}
+.carousel-indicators .active {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+}
+.carousel-caption {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 20px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.carousel-caption .btn {
+  text-shadow: none;
+}
+@media screen and (min-width: 768px) {
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 30px;
+  }
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .icon-prev {
+    margin-left: -10px;
+  }
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-next {
+   /* margin-right: -10px; */
+  }
+  .carousel-caption {
+    left: 20%;
+    right: 20%;
+    padding-bottom: 30px;
+  }
+  .carousel-indicators {
+    bottom: -10px;
+  }
+}
+</style>
+
+<div width="100%" height="320px" style="border: 0px; overflow: hidden; border-radius: 10px; margin-bottom: 25px;padding: 10px;" scrolling="no">
+
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500" style="float:left">
+
+      <!-- 轮播（Carousel）指标 -->
+      <ol class="carousel-indicators">
+      
+      
+        <li data-target="#myCarousel" data-slide-to="0"></li>
+        
+      
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        
+      
+      </ol>
+
+      <!-- 轮播（Carousel）项目 -->
+      <div class="carousel-inner" style="height: 290px; border-radius: 10px; width: 100%;">
+       
+       
+          
+          <a class="item active" href="/文章链接地址" target="_blank" style="height: 100%;">
+            
+            <img src="/images/lin.jpg" class="nofancybox" style="width: 100%; height: 100%">
+          </a>
+          
+          
+      
+          
+            <a class="item" href="/文章链接地址" target="_blank" style="height: 100%;">
+              <img src="/images/zero-two.jpg" class="nofancybox" style="width: 100%; height: 100%;">
+            </a>
+        
+      
+      </div>
+
+      <!-- 轮播（Carousel）导航 -->
+      <a class="left carousel-control" data-target="#myCarousel" href="javascript:void(0);" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      </a>
+      <a class="right carousel-control" data-target="#myCarousel" href="javascript:void(0);" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </a>
+
+	  </div>
+
+		<div class="rights" style="width: 30%; height: 290px; margin-right: 0px;margin-left: 20px;float: left;">
+  	   <!-- 天气插件 -->
+       <iframe width="300px" scrolling="no" height="58px" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=12&color=%23&bdc=%23&icon=1&py=chongqing&num=2&site=12"></iframe>
+
+  	   <!-- r热门排行 -->
+  	   <div class="my-carousel">
+         <a href="https://xwmrcj.com/top/" target="_blank">
+            <img class="right-siders nofancybox" src="/images/hot.png" width="100%">
+         </a>
+  	   </div>
+
+  	   <!-- 时光留影 -->
+  	   <div class="my-carousel">
+         <a href="https://xwmrcj.com/photo/photo.html" target="_blank">
+           <img class="right-siders nofancybox" src="/images/time.png">
+         </a>
+  	   </div>
+
+      <!-- 推荐阅读 -->
+      <div class="my-carousel">
+        <a href="https://xwmrcj.com/books/" target="_blank">
+          <img class="right-siders nofancybox" src="/images/read.png">
+        </a>
+      </div>
+
+      <!-- 订阅本站 -->
+      <div class="my-carousel">
+         <a href="https://xwmrcj.com/leaf" target="_blank">
+           <img class="right-siders nofancybox" src="/images/subscribe.png">
+         </a>
+      </div>
+
+   </div>
+
+</div>
+
+
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -401,7 +796,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xwmrcj.com/posts/6bdf8b67.html">
+    <link itemprop="mainEntityOfPage" href="https://xwmrcj.com/posts/19048.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MYH">
@@ -418,8 +813,10 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">VS2017操做sql server数据库
-
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/19048.html" class="post-title-link" itemprop="url">Hexo博客搭建踩过的坑</a>
               
             
           </h1>
@@ -444,7 +841,7 @@
                 
               
 
-              <time title="创建时间：2020-03-07 20:11:36" itemprop="dateCreated datePublished" datetime="2020-03-07T20:11:36+08:00">2020-03-07</time>
+              <time title="创建时间：2020-02-08 17:38:12" itemprop="dateCreated datePublished" datetime="2020-02-08T17:38:12+08:00">2020-02-08</time>
             </span>
           
 
@@ -459,7 +856,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-05-08 22:42:50" itemprop="dateModified" datetime="2020-05-08T22:42:50+08:00">2020-05-08</time>
+                <time title="修改时间：2020-03-07 20:52:58" itemprop="dateModified" datetime="2020-03-07T20:52:58+08:00">2020-03-07</time>
               </span>
             
           
@@ -473,21 +870,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/VS2017/" itemprop="url" rel="index"><span itemprop="name">VS2017</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/VS2017/sql-server/" itemprop="url" rel="index"><span itemprop="name">sql server</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/VS2017/sql-server/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hexo/NexT/" itemprop="url" rel="index"><span itemprop="name">NexT</span></a></span>
 
                 
                 
@@ -499,7 +889,7 @@
 
           
           
-            <span id="/posts/6bdf8b67.html" class="post-meta-item leancloud_visitors" data-flag-title="VS2017操做sql server数据库">
+            <span id="/posts/19048.html" class="post-meta-item leancloud_visitors" data-flag-title="Hexo博客搭建踩过的坑">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -521,7 +911,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">3.2k</span>
+              <span title="本文字数">451</span>
             </span>
           
 
@@ -533,7 +923,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">3 分钟</span>
+              <span title="阅读时长">1 分钟</span>
             </span>
           
 
@@ -552,117 +942,34 @@
       
 
       
-        <img src="https://s2.ax1x.com/2020/03/08/3xkeun.png">
-
-<a id="more"></a>
-
-<p><a href="https://xwmrcj.com/posts/6bdf8b67.html" class="LinkCard">VS2017操做sql server数据库</a></p>
-<p>新的学期已经到来！作业又开始蹭蹭蹭的往上涨😭。对于一个摸鱼怪来说，简直是要命啊<span style="color: #0948DC">(⊙﹏⊙)</span>！特别是课还没上，作业先到。没办法了，对于一个刚接触数据库的小白也只好踏上完成作业的不归路了<span style="color: #C350EC">＞﹏＜！</span></p>
-<p>好了，话不多说，希望摸鱼怪总结的对大家有丢丢帮助吧<span style="color: #C350EC">(<em>^_^</em>)</span>！</p>
-<hr>
-<ol>
-<li><h5 id="安装sql-server数据库"><a href="#安装sql-server数据库" class="headerlink" title="安装sql server数据库"></a>安装sql server数据库</h5><p>摸鱼怪在这里就不总结了，相信大家都会，实在不行就去问问度娘吧！</p>
-<div class="note warning">
-            <p>摸鱼怪在这里提醒大家，如果<u>版本太新可能会出现不兼容问题</u>，最开始我用的是sql server2017，但版本太新VS2017无法与该数据库连接，没办法只好卸了再重装一个sql server2014。</p>
-          </div>
-</li>
-<li><h5 id="新建一个数据库"><a href="#新建一个数据库" class="headerlink" title="新建一个数据库"></a>新建一个数据库</h5><p>打开sql server，点击新建查询，复制执行下面代码：</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> haha</span><br><span class="line"><span class="keyword">on</span> primary(</span><br><span class="line"><span class="keyword">name</span> = <span class="string">'haha'</span>,</span><br><span class="line">filename = <span class="string">'D:\test\haha.mdf'</span>,</span><br><span class="line"><span class="keyword">size</span> = <span class="number">10</span>MB,</span><br><span class="line"><span class="keyword">maxsize</span> = <span class="number">50</span>MB,</span><br><span class="line">filegrowth = <span class="number">5</span>MB</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">log</span> <span class="keyword">on</span>(</span><br><span class="line"><span class="keyword">name</span> = <span class="string">'haha_log'</span>,</span><br><span class="line">filename = <span class="string">'D:\test\haha_log.ldf'</span>,</span><br><span class="line"><span class="keyword">size</span> = <span class="number">10</span>MB,</span><br><span class="line"><span class="keyword">maxsize</span> = <span class="number">50</span>MB,</span><br><span class="line">filegrowth = <span class="number">5</span>MB</span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
-
-<div class="note info">
-            <p><u>sql server不会帮你新建一个文件夹</u>，你需要去D盘新建一个test文件夹，除非test文件夹已建，或者直接修改路径，这都看你的心情<span style="color: #7550EC">(<em>^_^</em>)</span></p>
-          </div>
-</li>
-<li><h5 id="新建一个表，复制执行下面代码："><a href="#新建一个表，复制执行下面代码：" class="headerlink" title="新建一个表，复制执行下面代码："></a>新建一个表，复制执行下面代码：</h5><div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> haha</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line"><span class="keyword">ID</span> <span class="built_in">int</span> primary <span class="keyword">key</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line"><span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">age <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
-
-<p>然后刷新数据库，就会发现多了一个test数据库，里面也多了一张student表。</p>
-</li>
-<li><h5 id="为student表插入数据，复制执行下面代码："><a href="#为student表插入数据，复制执行下面代码：" class="headerlink" title="为student表插入数据，复制执行下面代码："></a>为student表插入数据，复制执行下面代码：</h5><div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student</span><br><span class="line"><span class="keyword">values</span>(<span class="number">111</span>,<span class="string">'张三'</span>,<span class="number">18</span>),(<span class="number">222</span>,<span class="string">'李四'</span>,<span class="number">18</span>),(<span class="number">333</span>,<span class="string">'老王'</span>,<span class="number">18</span>);</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><h5 id="控制面板配置ODBC数据源"><a href="#控制面板配置ODBC数据源" class="headerlink" title="控制面板配置ODBC数据源"></a>控制面板配置ODBC数据源</h5><p>ODBC就是开放数据库互连，它提供了一种标准的API方法来访问数据库管理系统(DBMS)。具体配置方法大家可以参考这篇<a href="https://blog.csdn.net/qq_39312317/article/details/84944614?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">博文</a>。</p>
-<div class="note info">
-            <p>大家如果是直接用”SQL Server身份验证“进行登录的，可以不必像博文那样新建一个用户。同时，数据源名称须和你的数据库名称一致，因为测试，这里我们就把名称改为<u>haha</u>。</p>
-          </div>
-
-<div class="note warning">
-            <p><u>在选择连接哪一个SQL Server?</u>如果大家选(local)测试报错了，可以打开<span style="background: #D3E0EA">“SQL Server Managment Studio”</span>在登陆界面将自己的服务器名称粘贴赋值过去试一试，摸鱼怪当初就因为服务器名称没填对掉进坑里，少了”\SQLEXPRESS“<span style="color: #EC8250">≡(▔﹏▔)≡</span></p>
-          </div>
-
-<p>然后，在选择数据库这一步，点击<span style="background: #D3E0EA">”更改默认的数据库“</span>，选为<u>haha</u>。</p>
-<p>测试成功后，点击确定，你就会发现”用户 DSN“里多了haha，因为懒惰，这里摸鱼怪就不贴上图片了，希望大家见谅了。其他的步骤都与那片博文一致，只需注意一下上面小小的改动<span style="color: #EC50BA">O(∩_∩)O</span></p>
-</li>
-<li><h5 id="VS2017操作sql-server数据库"><a href="#VS2017操作sql-server数据库" class="headerlink" title="VS2017操作sql server数据库"></a>VS2017操作sql server数据库</h5><ul>
-<li><p>首先打开VS2017，新建一个”Windows 控制台应用程序“，位置可以修改为”D:\test\“。</p>
-</li>
-<li><p>在ConsoleApplication1源文件，<u>删除原来的main函数</u>，添加如下代码</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="C"><figure class="iseeu highlight /c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sql.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sqlext.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sqltypes.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loadDatabase</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SQLRETURN ret;</span><br><span class="line">	SQLHENV henv;</span><br><span class="line">	SQLHDBC hdbc;</span><br><span class="line">	SQLHSTMT hstmt;</span><br><span class="line"></span><br><span class="line">	ret = SQLAllocHandle(SQL_HANDLE_ENV, <span class="literal">NULL</span>, &amp;henv);</span><br><span class="line">	ret = SQLSetEnvAttr(henv, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, SQL_IS_INTEGER);</span><br><span class="line">	ret = SQLAllocHandle(SQL_HANDLE_DBC, henv, &amp;hdbc);</span><br><span class="line">	ret = SQLConnect(hdbc, (SQLCHAR*)<span class="string">"数据库名称"</span>, SQL_NTS, (SQLCHAR*)<span class="string">"用户名"</span>, SQL_NTS, (SQLCHAR*)<span class="string">"密码"</span>, SQL_NTS);</span><br><span class="line">	<span class="keyword">if</span> (ret == SQL_SUCCESS || ret == SQL_SUCCESS_WITH_INFO)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"数据库连接成功！\n"</span>;</span><br><span class="line">		ret = SQLAllocHandle(SQL_HANDLE_STMT, hdbc, &amp;hstmt);<span class="comment">//申请sql语句句柄</span></span><br><span class="line">		SQLCHAR sql[] = <span class="string">"select * from student"</span>;</span><br><span class="line">		ret = SQLExecDirect(hstmt, sql, SQL_NTS);<span class="comment">//直接执行sql语句</span></span><br><span class="line">		<span class="keyword">if</span> (ret == SQL_SUCCESS || ret == SQL_SUCCESS_WITH_INFO)</span><br><span class="line">		&#123;</span><br><span class="line">			SQLINTEGER ID,age;</span><br><span class="line">			SQLCHAR name[<span class="number">20</span>];</span><br><span class="line">			SQLINTEGER len_ID, len_name, len_age;</span><br><span class="line">			<span class="keyword">while</span> (SQLFetch(hstmt) != SQL_NO_DATA)</span><br><span class="line">			&#123;</span><br><span class="line">				SQLGetData(hstmt, <span class="number">1</span>, SQL_C_ULONG, &amp;ID, <span class="number">0</span>, &amp;len_ID);</span><br><span class="line">				SQLGetData(hstmt, <span class="number">2</span>, SQL_C_CHAR, name, <span class="number">10</span>, &amp;len_name);</span><br><span class="line">				SQLGetData(hstmt, <span class="number">3</span>, SQL_C_ULONG, &amp;age, <span class="number">0</span>, &amp;len_age);</span><br><span class="line">				<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; ID &lt;&lt; <span class="string">"    "</span> &lt;&lt; name &lt;&lt; <span class="string">"    "</span> &lt;&lt; age &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"查询失败！\n"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		SQLFreeHandle(SQL_HANDLE_STMT, hstmt);<span class="comment">//释放语句句柄</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"连接失败！\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	SQLFreeHandle(SQL_HANDLE_DBC, hdbc);<span class="comment">//释放句柄</span></span><br><span class="line">	SQLFreeHandle(SQL_HANDLE_ENV, henv);<span class="comment">//释放环境句柄     </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	loadDatabase();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<div class="note info">
-            <p>大家在这里注意一下，上面有几处需要你自己修改，<span style="background: #D3E0EA">”数据库名称“</span>也就是当前我们连接的数据库<u>”haha“</u>，<span style="background: #D3E0EA">”用户名“</span>和<span style="background: #D3E0EA">”密码“</span>是你进行<u>SQL Server身份验证的登录名和密码</u>，大家注意修改哦<span style="color: #088741">ఠൠఠ </span></p>
-          </div>
-</li>
-<li><p>做完以上工作后，然后执行代码，就会发现，问题就找上门来了！<span style="color: #0CB1B3">(っ °Д °;)っ</span>，主要问题描述为：<span style="background: #D3E0EA">“SQLCHAR *” 类型的实参与 “SQLWCHAR *” 类型的形参不兼容</span>。补救方法就是”项目 —&gt;ConsoleApplication1属性—&gt;配置属性—&gt;常规—&gt;项目默认值—&gt;字符集—&gt;改为使用多字节字符集“。然后再次执行就成功了！</p>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<p>好了，摸鱼怪能力有限，目前也只能总结到这了<span style="color: #09CDDC">&lt;(＿　＿)&gt;</span>，希望对大家有所帮助吧！大家也可以了解<a href="https://docs.microsoft.com/en-us/sql/odbc/reference/syntax/odbc-api-reference?view=sql-server-ver15" target="_blank" rel="noopener">ODBC API</a>的更多操作！</p>
-<center style="color: #08A3F9; font-size: 24px">摸鱼永无止境，大家(ง •_•)ง！！</center>
-
+        
+          <img src="https://s2.ax1x.com/2020/03/06/3LxfHA.png">
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/19048.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
       
     </div>
 
     <!-- 相关文章推荐
-    #
-      #
-
-
     # -->
 
      <!-- 相关文章推荐 -->
     
-      
-
-    
 
     
     
     
 
-    
-      <div>
-        
-
-
-
-
-  
-
-
-
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>MYH</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    
-    <a href="https://xwmrcj.com/posts/6bdf8b67.html" title="VS2017操做sql server数据库">https://xwmrcj.com/posts/6bdf8b67.html</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
-</ul>
-
-      </div>
     
 
     <div>
-      
-        <div>
-    
-        <div style="text-align:center;color: #3399ff;font-size:16px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
       
     </div>
 
@@ -672,104 +979,17 @@
       
     
     
-      <div>
-        <div id="reward-container">
-  <div></div>
-  <button class="btn-1 btn--stripe btn--radius" style="display:block;margin:0 auto" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/wechatpay.png" alt="MYH 微信支付">
-        <p>微信支付</p>
-      </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/alipay.png" alt="MYH 支付宝">
-        <p>支付宝</p>
-      </div>
-    
-
-  </div>
-</div>
-
-      </div>
-    
 
     <footer class="post-footer">
       
-        
-          
-        
-        <div class="post-tags">
-          
-            <a href="/tags/VS2017/" rel="tag"><i class="fa fa-tag"></i> VS2017</a>
-          
-            <a href="/tags/sql-server/" rel="tag"><i class="fa fa-tag"></i> sql server</a>
-          
-            <a href="/tags/数据库/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
-          
-        </div>
+
+      
+
       
 
       
       
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div class="social_share">
-            
-            
-              <div id="needsharebutton-postbottom">
-                <span class="btn">
-                  <i class="fa fa-share-alt" aria-hidden="true"></i>
-                </span>
-              </div>
-            
-            
-          </div>
-        
-        </div>
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/posts/389486c1.html" rel="next" title="Hexo-NexT侧栏添加霓虹灯时钟">
-                <i class="fa fa-chevron-left"></i> Hexo-NexT侧栏添加霓虹灯时钟
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/94ef7154.html" rel="prev" title="Hadoop启动时出现Permission denied">
-                Hadoop启动时出现Permission denied <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -779,19 +999,18 @@
   </article>
 
 
-  </div>
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-    </div>
-
-  
-
-
 
         </div>
         
@@ -811,17 +1030,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1035,23 +1245,6 @@ show_date_time();
 
 
       
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装sql-server数据库"><span class="nav-number">1.</span> <span class="nav-text">安装sql server数据库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新建一个数据库"><span class="nav-number">2.</span> <span class="nav-text">新建一个数据库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新建一个表，复制执行下面代码："><span class="nav-number">3.</span> <span class="nav-text">新建一个表，复制执行下面代码：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#为student表插入数据，复制执行下面代码："><span class="nav-number">4.</span> <span class="nav-text">为student表插入数据，复制执行下面代码：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#控制面板配置ODBC数据源"><span class="nav-number">5.</span> <span class="nav-text">控制面板配置ODBC数据源</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#VS2017操作sql-server数据库"><span class="nav-number">6.</span> <span class="nav-text">VS2017操作sql server数据库</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
 
       
 
@@ -1224,10 +1417,6 @@ show_date_time();
 
 
   
-  <script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
-
-
 
   
 
@@ -1246,9 +1435,28 @@ show_date_time();
   
 
   
+    
+      
+    
+  
 
   
   
+  
+    <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+    <script>
+      
+        window.addEventListener('load', () => {
+      
+        quicklink({
+          timeout: 3000,
+          priority: true,
+          ignores: [uri => uri.includes('#'),uri => uri == 'https://xwmrcj.com/page/3/',]
+        });
+      
+        });
+      
+    </script>
   
 
 
@@ -1285,8 +1493,6 @@ show_date_time();
 
 
 
-
-  
 
 
   
